@@ -11,7 +11,11 @@ class File {
     }
     
     public function getFile($name){
-        return $_FILES[$name];
+        if(isset($_FILES[$name])){
+	    return $_FILES[$name];
+	}else{
+	    return 0;
+	}
     }
     
     //проверим и сохраним изображение на сервер
